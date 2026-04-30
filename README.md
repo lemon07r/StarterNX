@@ -18,7 +18,6 @@ Custom Nintendo Switch CFW pack built from Kefirosphere 818, HATS 2026-04-21, an
 |-------|-------------|
 | CFW EmuMMC + HOC | EmuMMC with Horizon OC active |
 | CFW EmuMMC Clean | EmuMMC without OC KIP (recovery/debugging) |
-| CFW SysMMC + HOC | SysMMC with Horizon OC active |
 | CFW SysMMC Clean | SysMMC without OC KIP |
 | Semi-Stock (SysMMC) | Atmosphere with stock sysmodules |
 | 100% Stock OFW | Original firmware, no CFW |
@@ -38,6 +37,7 @@ Custom Nintendo Switch CFW pack built from Kefirosphere 818, HATS 2026-04-21, an
 |--------|-----|--------|
 | hoc-clk | 00FF0000636C6BFF | HOC |
 | nx-ovlloader | 420000000007E51A | HATS v2.0.0 |
+| nx-ovlreloader | 420000000007E51B | HATS / Ultrahand |
 | MissionControl | 010000000000bd00 | HATS v0.15.1 |
 | sys-patch | 420000000000000B | HATS v1.6.1 |
 | SaltyNX | 0000000000534C56 | HATS v1.7.5 |
@@ -87,6 +87,12 @@ Custom Nintendo Switch CFW pack built from Kefirosphere 818, HATS 2026-04-21, an
 | themes/ | Theme patches for NxThemeInstaller |
 | scripts/ | TegraExplorer recovery scripts |
 
+## Horizon OC Status
+
+Horizon OC is installed with the upstream `hoc.kip`, `hoc-clk`, overlays, and template config only.
+No prior per-console OC tuning has been carried into this pack. Apply tuned `hoc.kip` / `config.ini`
+later after validating the base pack boots cleanly.
+
 ## Intentionally Excluded
 
 | Item | Reason |
@@ -108,7 +114,8 @@ Custom Nintendo Switch CFW pack built from Kefirosphere 818, HATS 2026-04-21, an
 ## Config Highlights
 
 - **system_settings.ini**: Merged from Kefir (comprehensive telemetry/background task blocking) + DNS MITM enabled (from HATS approach)
-- **DNS hosts**: Kefir's domains.txt (ad/tracker blocking) + Nintendo server blocking via default.txt
+- **DNS hosts**: `atmosphere/hosts/default.txt` contains the HATS Nintendo blocklist plus Kefir ad/tracker entries
+- **HATS system settings**: external Bluetooth DB and OLSC communication block are enabled
 - **exosphere.ini**: PRODINFO blanked on both SysMMC and EmuMMC
 - **exefs_patches**: Merged from both packs (bluetooth, btm, hid, disable_remap_dialog, logo_sloth, SaltyNX_Fixes)
 - **Ultrahand key combo**: L+DDOWN+RS
@@ -118,7 +125,8 @@ Custom Nintendo Switch CFW pack built from Kefirosphere 818, HATS 2026-04-21, an
 Individual components can be updated by downloading new releases and replacing the relevant files:
 - **Atmosphere/Kefirosphere**: Replace `atmosphere/package3`, `atmosphere/stratosphere.romfs`
 - **Hekate**: Replace `bootloader/sys/*`, `bootloader/update.bin`, `payload.bin`, `atmosphere/reboot_payload.bin`, `boot.dat`
-- **Horizon OC**: Replace `atmosphere/kips/hoc.kip`, `atmosphere/contents/00FF0000636C6BFF/exefs.nsp`, overlays
+- **Horizon OC**: Replace `atmosphere/kips/hoc.kip`, `atmosphere/contents/00FF0000636C6BFF/exefs.nsp`, overlays, and `config/horizon-oc/`
+- **Ultrahand/nx-ovlloader**: Replace `atmosphere/contents/420000000007E51A/`, `atmosphere/contents/420000000007E51B/`, and `switch/.overlays/ovlmenu.ovl`
 - **Individual overlays/apps**: Replace the .ovl or .nro file
 
 Do NOT use Kefir Updater or HATS-Tools to update -- they will overwrite your custom configuration.
