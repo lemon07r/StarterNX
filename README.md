@@ -1,4 +1,4 @@
-# Custom CFW Pack
+# StarterNX
 
 Custom Nintendo Switch CFW pack built from Kefirosphere 818, HATS 2026-04-21, and Horizon OC.
 
