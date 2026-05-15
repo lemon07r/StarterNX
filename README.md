@@ -28,7 +28,7 @@ Users can also clone the repo and copy the tracked files and folders manually.
 
 - Horizon OC, hoc-clk, Horizon-OC overlay, and Horizon-OC Monitor
 - Ultrahand Overlay and nx-ovlloader
-- DBI English 895, JKSV, Daybreak, Sphaira, Haze, reboot_to_payload, CyberFoil, Linkalho, NxThemeInstaller, and Switch 90DNS Tester
+- DBI English 895, JKSV, Daybreak, Sphaira, Haze, CyberFoil, Linkalho, NxThemeInstaller, and Switch 90DNS Tester
 - Alchemist 1.0.6 package for managing, converting, and installing mods
 - SaltyNX, FPSLocker, emuiibo, EdiZon overlay, QuickNTP, sys-patch overlay, and ovlSysmodules
 - TegraExplorer-Ext, FuseCheck, Lockpick_RCM_Pro, and Picofly toolbox payloads
