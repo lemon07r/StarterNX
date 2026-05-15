@@ -4,7 +4,7 @@ StarterNX is a curated Nintendo Switch CFW SD-card pack for firmware up to 22.1.
 
 Most users should start with [NX-Carnage](https://github.com/dominatorul/Nx-Carnage) instead. It is the cleaner, lighter base for this pack and is easier to recommend for beginners or anyone who wants fewer moving parts.
 
-StarterNX is a curated variant of that base. It may refresh selected extras independently, so some components can be newer than the source pack, such as sys-patch in this build.
+StarterNX is a curated variant of that base with selected additions and independent component refreshes, so component versions can differ from the source pack.
 
 The repo root mirrors the SD card root. Release zips are intended to be extracted directly to the root of a Switch SD card.
 
