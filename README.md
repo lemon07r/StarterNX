@@ -14,7 +14,7 @@ https://github.com/lemon07r/StarterNX/releases/latest
 
 Extract the zip to the SD card root. Back up the SD card first.
 
-Advanced users can also clone the repo and copy the tracked payload files and folders manually.
+Users can also clone the repo and copy the tracked files and folders manually.
 
 ## Base
 
