@@ -16,7 +16,7 @@ Custom Nintendo Switch CFW pack for firmware up to 22.1.0.
 - Ultrahand Overlay
 - nx-ovlloader v2.0.1
 - DBI English 895
-- JKSV, Daybreak, Sphaira, CyberFoil, Linkalho, NxThemeInstaller, and Switch 90DNS Tester
+- JKSV, Daybreak, Sphaira, Haze, reboot_to_payload, CyberFoil, Linkalho, NxThemeInstaller, and Switch 90DNS Tester
 - sys-patch v1.6.2.0
 - SaltyNX, FPSLocker, emuiibo, EdiZon overlay, QuickNTP, and ovlSysmodules
 - TegraExplorer-Ext, FuseCheck, Lockpick_RCM_Pro, and Picofly toolbox payload
