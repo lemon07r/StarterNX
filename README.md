@@ -1,6 +1,6 @@
 # StarterNX
 
-StarterNX is a curated Nintendo Switch CFW SD-card pack for firmware up to 22.1.0. It is built around a vanilla Atmosphere 1.11.1 / NX-Carnage-style core, with selected extras for Horizon OC, Hekate-ext booting, overlays, homebrew utilities, DNS MITM, and emuMMC-focused patching.
+StarterNX is a curated Nintendo Switch CFW SD-card pack for firmware up to 22.1.0. It is built around a vanilla Atmosphere 1.11.1 / NX-Carnage-style core, with a few local choices layered on top.
 
 Most users should start with [NX-Carnage](https://github.com/dominatorul/Nx-Carnage) instead. It is the cleaner, lighter base for this pack and is easier to recommend for beginners or anyone who wants fewer moving parts.
 
