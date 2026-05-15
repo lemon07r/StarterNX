@@ -4,13 +4,13 @@ Custom Nintendo Switch CFW pack for firmware up to 22.1.0.
 
 ## Source Stack
 
-- Kefirosphere 822
+- Atmosphere 1.11.1 core from the local NX-Carnage release
 - Selected HATS components from 2026-05-11 (7fba776)
 - Horizon OC 2.3.0
 
 ## What's Included
 
-- Kefirosphere 822
+- Atmosphere 1.11.1 core with HOC patched exosphere
 - Hekate-ext v6.5.2
 - Horizon OC 2.3.0
 - Ultrahand Overlay
@@ -26,7 +26,8 @@ Custom Nintendo Switch CFW pack for firmware up to 22.1.0.
 
 | Entry | Use |
 |-------|-----|
-| CFW EmuMMC + HOC | Main EmuMMC boot with Horizon OC enabled |
+| CFW EmuMMC + HOC | Main EmuMMC boot with Horizon OC and patched exosphere enabled |
+| CFW EmuMMC + HOC + Extra RAM | Test boot with Horizon OC plus the extra-RAM mesosphere patch |
 | CFW EmuMMC Clean | EmuMMC recovery boot without Horizon OC |
 | CFW SysMMC Clean | SysMMC CFW boot without Horizon OC |
 | Semi-Stock (SysMMC) | Minimal Atmosphere boot |
@@ -41,6 +42,7 @@ Apply your tuned HOC config later after confirming the base pack boots cleanly.
 
 ## Not Included
 
+- Kefirosphere core files or Kefir splash/logo branding
 - sys-clk or sys-clk-overlay
 - Kefir OC configs
 - Uberhand
