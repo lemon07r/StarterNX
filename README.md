@@ -1,58 +1,49 @@
 # StarterNX
 
-Custom Nintendo Switch CFW pack for firmware up to 22.1.0.
+StarterNX is a curated Nintendo Switch CFW SD-card pack for firmware up to 22.1.0. It is built around a vanilla Atmosphere 1.11.1 / NX-Carnage-style core, with selected extras for Horizon OC, Hekate-ext booting, overlays, homebrew utilities, DNS MITM, and emuMMC-focused patching.
 
-## Source Stack
+The repo root mirrors the SD card root. To install it, copy the tracked payload files and folders to the root of a Switch SD card.
 
-- Atmosphere 1.11.1 core from the local NX-Carnage release
-- Selected HATS components from 2026-05-11 (7fba776)
-- Horizon OC 2.3.0
+## Current Base
 
-## What's Included
-
-- Atmosphere 1.11.1 core with HOC patched exosphere
-- Hekate-ext v6.5.2
-- Horizon OC 2.3.0
-- Ultrahand Overlay
-- nx-ovlloader v2.0.1
-- DBI English 895
-- JKSV, Daybreak, Sphaira, Haze, reboot_to_payload, CyberFoil, Linkalho, NxThemeInstaller, and Switch 90DNS Tester
-- sys-patch v1.6.2.0
-- SaltyNX, FPSLocker, emuiibo, EdiZon overlay, QuickNTP, and ovlSysmodules
-- TegraExplorer-Ext, FuseCheck, Lockpick_RCM_Pro, and Picofly toolbox payload
+- Atmosphere 1.11.1 core from NX-Carnage
+- Horizon OC 2.3.0 with patched exosphere enabled on HOC boot entries
+- Hekate-ext v6.5.2 from HATS
+- sys-patch v1.6.2.0 configured for emuMMC patching only
 - DNS MITM hosts for Nintendo blocking plus ad/tracker blocking
+
+## Included Extras
+
+- Horizon OC, hoc-clk, Horizon-OC overlay, and Horizon-OC Monitor
+- Ultrahand Overlay and nx-ovlloader
+- DBI English 895, JKSV, Daybreak, Sphaira, Haze, reboot_to_payload, CyberFoil, Linkalho, NxThemeInstaller, and Switch 90DNS Tester
+- Alchemist 1.0.6 package for managing, converting, and installing mods
+- SaltyNX, FPSLocker, emuiibo, EdiZon overlay, QuickNTP, sys-patch overlay, and ovlSysmodules
+- TegraExplorer-Ext, FuseCheck, Lockpick_RCM_Pro, and Picofly toolbox payloads
 
 ## Boot Entries
 
 | Entry | Use |
-|-------|-----|
-| CFW EmuMMC + HOC | Main EmuMMC boot with Horizon OC and patched exosphere enabled |
-| CFW EmuMMC + HOC + Extra RAM | Test boot with Horizon OC plus the extra-RAM mesosphere patch |
-| CFW EmuMMC Clean | EmuMMC recovery boot without Horizon OC |
+| --- | --- |
+| CFW EmuMMC + HOC | Main emuMMC boot with Horizon OC and patched exosphere |
+| CFW EmuMMC + HOC + Extra RAM | Test emuMMC boot with HOC plus the extra-RAM mesosphere patch |
+| CFW EmuMMC Clean | Recovery emuMMC boot without Horizon OC or patched exosphere |
 | CFW SysMMC Clean | SysMMC CFW boot without Horizon OC |
-| Semi-Stock (SysMMC) | Minimal Atmosphere boot |
+| Semi-Stock (SysMMC) | Minimal Atmosphere sysMMC boot |
 | 100% Stock OFW | Stock firmware without CFW |
 
-Use the clean EmuMMC entry if an overclock setting prevents the main HOC entry from booting.
+Use `CFW EmuMMC Clean` if an overclock setting prevents the main HOC entry from booting.
+
+## Install Notes
+
+1. Back up the SD card before replacing files.
+2. Copy the repo payload files and folders to the SD root.
+3. Keep `payload.bin`, `bootloader/update.bin`, `atmosphere/reboot_payload.bin`, and `bootloader/sys/*` on the same Hekate build when updating Hekate.
+4. Do not run Kefir Updater, HATS-Tools, or NX-Carnage Easy Setup against this pack. Those workflows assume their own full pack layout and can overwrite StarterNX choices.
 
 ## Horizon OC
 
 Horizon OC is installed with upstream 2.3.0 files only. No per-console tuning is included.
-Apply your tuned HOC config later after confirming the base pack boots cleanly.
-
-## Not Included
-
-- Kefirosphere core files or Kefir splash/logo branding
-- sys-clk or sys-clk-overlay
-- Kefir OC configs
-- Uberhand
-- Kefir Updater or HATS-Tools
-- Tinfoil, Tinwoo, Goldleaf, or DBI RU
-- MissionControl or sys-con
-- Status Monitor Overlay
-- DowngradeFixer or Prodinfo_gen
-
-Do not use Kefir Updater or HATS-Tools with this pack. They are designed for their own full packs and can overwrite StarterNX choices.
 
 ## Controls
 
@@ -62,3 +53,23 @@ Open Ultrahand with `L + DDOWN + RS`.
 
 Launch Album while holding `R` to open HBMenu without the forwarder.
 If the old HBMenu forwarder errors after updating, reinstall `games/Homebrew menu [03DB12780BD84000][v0].nsp` with DBI.
+
+## Not Included
+
+- Kefirosphere core files, Kefir updater workflows, Kefir OC, or Kefir branding
+- sys-clk or sys-clk-overlay
+- Tinfoil, Tinwoo, Goldleaf, or DBI RU
+- MissionControl, sys-con, Status Monitor, DowngradeFixer, or Prodinfo_gen
+
+## Credits
+
+StarterNX is a local curated pack assembled from upstream projects and release packs. Please support the original maintainers.
+
+- NX-Carnage: https://github.com/dominatorul/Nx-Carnage
+- HATS: https://github.com/sthetix/HATS
+- Horizon OC: https://github.com/Horizon-OC/Horizon-OC
+- Atmosphere: https://github.com/Atmosphere-NX/Atmosphere
+- Hekate: https://github.com/CTCaer/hekate
+- sys-patch: https://github.com/impeeza/sys-patch
+- Ultrahand Overlay: https://github.com/ppkantorski/Ultrahand-Overlay
+- Alchemist: https://github.com/ppkantorski/Alchemist
