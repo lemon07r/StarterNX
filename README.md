@@ -2,9 +2,23 @@
 
 StarterNX is a curated Nintendo Switch CFW SD-card pack for firmware up to 22.1.0. It is built around a vanilla Atmosphere 1.11.1 / NX-Carnage-style core, with selected extras for Horizon OC, Hekate-ext booting, overlays, homebrew utilities, DNS MITM, and emuMMC-focused patching.
 
-The repo root mirrors the SD card root. To install it, copy the tracked payload files and folders to the root of a Switch SD card.
+Most users should start with [NX-Carnage](https://github.com/dominatorul/Nx-Carnage) instead. NX-Carnage is cleaner, lighter, closer to its own upstream defaults, and easier to recommend for beginners or anyone who wants a smaller CFW pack.
 
-## Current Base
+Use StarterNX when you specifically want this opinionated, batteries-included setup: Horizon OC, HATS-selected utilities, overlays, DNS MITM hosts, emuMMC-only sys-patch defaults, Picofly-oriented payload choices, and the recovery boot entries documented below.
+
+The repo root mirrors the SD card root. Release zips are intended to be extracted directly to the root of a Switch SD card.
+
+## Download
+
+Download the latest release zip from:
+
+https://github.com/lemon07r/StarterNX/releases/latest
+
+Extract the zip to the SD card root. Back up the SD card first.
+
+Advanced users can also clone the repo and copy the tracked payload files and folders manually.
+
+## Base
 
 - Atmosphere 1.11.1 core from NX-Carnage
 - Horizon OC 2.3.0 with patched exosphere enabled on HOC boot entries
@@ -37,7 +51,7 @@ Use `CFW EmuMMC Clean` if an overclock setting prevents the main HOC entry from 
 ## Install Notes
 
 1. Back up the SD card before replacing files.
-2. Copy the repo payload files and folders to the SD root.
+2. Download the latest release zip and extract it to the SD root.
 3. Keep `payload.bin`, `bootloader/update.bin`, `atmosphere/reboot_payload.bin`, and `bootloader/sys/*` on the same Hekate build when updating Hekate.
 4. Do not run Kefir Updater, HATS-Tools, or NX-Carnage Easy Setup against this pack. Those workflows assume their own full pack layout and can overwrite StarterNX choices.
 
