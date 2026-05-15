@@ -6,8 +6,6 @@ Most users should start with [NX-Carnage](https://github.com/dominatorul/Nx-Carn
 
 StarterNX is a curated variant of that base with selected additions and independent component refreshes, so component versions can differ from the source pack.
 
-The repo root mirrors the SD card root. Release zips are intended to be extracted directly to the root of a Switch SD card.
-
 ## Download
 
 Download the latest release zip from:
