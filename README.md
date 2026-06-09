@@ -19,16 +19,17 @@ Users can also clone the repo and copy the tracked files and folders manually.
 ## Base
 
 - Atmosphere 1.11.1 core from NX-Carnage
-- Horizon OC 2.3.0 with patched exosphere enabled on HOC boot entries
-- Hekate-ext v6.5.2 from HATS
+- Horizon OC 2.4.1 with patched exosphere enabled on HOC boot entries
+- Hekate-ext v6.5.2 and selected homebrew from HATS (synced with the 2026-06-02 build)
 - sys-patch v1.6.2.0 configured for emuMMC patching only
 - DNS MITM hosts for Nintendo blocking plus ad/tracker blocking
 
 ## Included Extras
 
 - Horizon OC, hoc-clk, Horizon-OC overlay, and Horizon-OC Monitor
-- Ultrahand Overlay and nx-ovlloader
-- DBI English 895, JKSV, Daybreak, Sphaira, Haze, CyberFoil, Linkalho, NxThemeInstaller, and Switch 90DNS Tester
+- sys-dock for dock display/profile control and NX-FanControl for system fan curves
+- Ultrahand Overlay 2.4.4 and nx-ovlloader 2.0.2
+- DBI English 895, JKSV, Daybreak, Sphaira, Haze, CyberFoil 1.4.5, Linkalho, NxThemeInstaller, and Switch 90DNS Tester 1.1.0
 - Alchemist 1.0.6 package for managing, converting, and installing mods
 - SaltyNX, FPSLocker, emuiibo, EdiZon overlay, QuickNTP, sys-patch overlay, and ovlSysmodules
 - TegraExplorer-Ext, FuseCheck, Lockpick_RCM_Pro, and Picofly toolbox payloads
@@ -55,7 +56,7 @@ Use `CFW EmuMMC Clean` if an overclock setting prevents the main HOC entry from 
 
 ## Horizon OC
 
-Horizon OC is installed with upstream 2.3.0 files only. No per-console tuning is included.
+Horizon OC is installed with upstream 2.4.1 files only. No per-console tuning is included.
 
 ## Controls
 
