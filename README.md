@@ -1,88 +1,80 @@
 # StarterNX
 
-StarterNX is a curated Nintendo Switch CFW SD-card pack for firmware up to 22.1.0. It is built around a vanilla Atmosphere 1.11.1 / NX-Carnage-style core.
+StarterNX is a curated Nintendo Switch CFW SD-card pack for firmware up to 22.5.0. It uses the vanilla Atmosphere 1.11.2 core, selected HATS components, and Horizon OC as its only overclocking system. It is not Kefirosphere-based.
 
-Most users should start with [NX-Carnage](https://github.com/dominatorul/Nx-Carnage) instead. It is the cleaner, lighter base for this pack and is easier to recommend for beginners or anyone who wants fewer moving parts.
-
-StarterNX is a curated variant of that base with selected additions and independent component refreshes, so component versions can differ from the source pack.
+Most users should start with [NX-Carnage](https://github.com/dominatorul/Nx-Carnage) instead. StarterNX is a more opinionated variant with independent component refreshes and a recovery-focused boot layout.
 
 ## Download
 
-Download the latest release zip from:
+Download the latest release ZIP from:
 
 https://github.com/lemon07r/StarterNX/releases/latest
 
-Extract the zip to the SD card root. Back up the SD card first.
+Back up the SD card, then extract the ZIP directly to the SD-card root. Users can also clone the repository and copy the tracked files and folders manually.
 
-Users can also clone the repo and copy the tracked files and folders manually.
+## Current Stack
 
-## Base
-
-- Atmosphere 1.11.1 core from NX-Carnage
-- Horizon OC 2.4.1 with patched exosphere enabled on HOC boot entries
-- Hekate-ext v6.5.2 and selected homebrew from HATS (synced with the 2026-06-02 build)
-- sys-patch v1.6.2.0 configured for emuMMC patching only
+- Atmosphere 1.11.2 with Haze and Daybreak, supporting HOS 22.5.0
+- Hekatos 6.5.3 from HATS 2026-07-25 (`3e7a04f`)
+- Horizon OC 2.5.1 with its patched exosphere, hoc-clk, overlay, and ppkantorski Status Monitor 1.4.1+r4
+- sys-patch 1.6.2.3, configured for emuMMC patching only
+- Ultrahand Overlay 2.5.3 with nx-ovlloader 2.0.2
+- DBI English 898, FuseCheck 1.0.4, Lockpick_RCM_Pro 2.1.0, and ovlSysmodules 1.5.3
+- sys-dock 1.0.2 and NX-FanControl, with the NX-FanControl 1.0.3+r4 overlay
+- Alchemist 1.0.6, SaltyNX, FPSLocker, emuiibo, EdiZon, QuickNTP, JKSV, Sphaira, CyberFoil, Linkalho, NxThemeInstaller, and Switch 90DNS Tester
 - DNS MITM hosts for Nintendo blocking plus ad/tracker blocking
 
-## Included Extras
-
-- Horizon OC, hoc-clk, Horizon-OC overlay, and Horizon-OC Monitor
-- sys-dock for dock display/profile control and NX-FanControl for system fan curves
-- Ultrahand Overlay 2.4.4 and nx-ovlloader 2.0.2
-- DBI English 895, JKSV, Daybreak, Sphaira, Haze, CyberFoil 1.4.5, Linkalho, NxThemeInstaller, and Switch 90DNS Tester 1.1.0
-- Alchemist 1.0.6 package for managing, converting, and installing mods
-- SaltyNX, FPSLocker, emuiibo, EdiZon overlay, QuickNTP, sys-patch overlay, and ovlSysmodules
-- TegraExplorer-Ext, FuseCheck, Lockpick_RCM_Pro, and Picofly toolbox payloads
+HATS calls its Hekate fork “Hekatos.” All Hekatos payload, update, boot, and `bootloader/sys` files in this pack come from the same 6.5.3/4 GB build.
 
 ## Boot Entries
 
 | Entry | Use |
 | --- | --- |
 | CFW EmuMMC + HOC | Main emuMMC boot with Horizon OC and patched exosphere |
-| CFW EmuMMC + HOC + Extra RAM | Test emuMMC boot with HOC plus the extra-RAM mesosphere patch |
+| CFW EmuMMC + HOC + Extra RAM | Test emuMMC boot with HOC plus the retained extra-RAM mesosphere |
 | CFW EmuMMC Clean | Recovery emuMMC boot without Horizon OC or patched exosphere |
-| CFW SysMMC Clean | SysMMC CFW boot without Horizon OC |
+| CFW SysMMC Clean | SysMMC CFW without Horizon OC |
 | Semi-Stock (SysMMC) | Minimal Atmosphere sysMMC boot |
 | 100% Stock OFW | Stock firmware without CFW |
 
-Use `CFW EmuMMC Clean` if an overclock setting prevents the main HOC entry from booting.
+Use `CFW EmuMMC Clean` if an overclock setting or HOC migration prevents the main entry from booting.
 
-## Install Notes
+## Install and Migration Notes
 
 1. Back up the SD card before replacing files.
-2. Download the latest release zip and extract it to the SD root.
-3. Keep `payload.bin`, `bootloader/update.bin`, `atmosphere/reboot_payload.bin`, and `bootloader/sys/*` on the same Hekate build when updating Hekate.
-4. Do not run Kefir Updater, HATS-Tools, or NX-Carnage Easy Setup against this pack. Those workflows assume their own full pack layout and can overwrite StarterNX choices.
+2. Extract the release ZIP to the SD-card root.
+3. If upgrading from HOC 2.4.1, preserve `config/horizon-oc/config.ini`, then reboot through a HOC entry twice. HOC 2.5.1 uses the first boots to migrate the saved configuration into the new KIP.
+4. Verify the migrated settings before stress testing. The clean EmuMMC entry remains available throughout recovery.
+5. Daybreak is at `switch/daybreak.nro`. DBI and its language/config files are consolidated under `switch/DBI/`.
+6. Keep `payload.bin`, `boot.dat`, `bootloader/update.bin`, `atmosphere/reboot_payload.bin`, and `bootloader/sys/*` together when refreshing the boot stack.
+7. Do not run Kefir Updater, HATS-Tools, or NX-Carnage Easy Setup against this pack. Those full-pack workflows can overwrite StarterNX choices.
 
-## Horizon OC
+No per-console Horizon OC tuning is shipped in this repository.
 
-Horizon OC is installed with upstream 2.4.1 files only. No per-console tuning is included.
-
-## Controls
+## Controls and Homebrew
 
 Open Ultrahand with `L + DDOWN + RS`.
 
-## Homebrew Launching
+The root `hbmenu.nro` intentionally launches Sphaira. Launch Album while holding `R` to open HBMenu without the forwarder. For HOS 22.5.0, reinstall the refreshed `games/Homebrew menu [03DB12780BD84000][v0].nsp` with DBI if an older installed forwarder errors.
 
-Launch Album while holding `R` to open HBMenu without the forwarder.
-If the old HBMenu forwarder errors after updating, reinstall `games/Homebrew menu [03DB12780BD84000][v0].nsp` with DBI.
+StarterNX retains selected, unchanged Kefir-derived behavior: hbloader 2.4.4, the accessible-URL list, `boot.ini`, Mariko warmboots, the Sphaira root launcher, and curated configuration choices. It does not include the Kefir core, payload, updater, scripts, branding, or OC system.
 
 ## Not Included
 
 - Kefirosphere core files, Kefir updater workflows, Kefir OC, or Kefir branding
 - sys-clk or sys-clk-overlay
-- Tinfoil, Tinwoo, Goldleaf, or DBI RU
-- MissionControl, sys-con, Status Monitor, DowngradeFixer, or Prodinfo_gen
+- MissionControl, sys-con, Tinfoil, Tinwoo, Goldleaf, DBI RU, KitNX, HATS-Tools, or ProdinForge
+- DowngradeFixer, Prodinfo_gen, or other destructive/redundant tools
 
 ## Credits
 
-StarterNX is a local curated pack assembled from upstream projects and release packs. Please support the original maintainers.
+StarterNX is assembled from upstream open-source projects and release packs. Please support the original maintainers.
 
-- NX-Carnage: https://github.com/dominatorul/Nx-Carnage
-- HATS: https://github.com/sthetix/HATS
-- Horizon OC: https://github.com/Horizon-OC/Horizon-OC
-- Atmosphere: https://github.com/Atmosphere-NX/Atmosphere
-- Hekate: https://github.com/CTCaer/hekate
-- sys-patch: https://github.com/impeeza/sys-patch
-- Ultrahand Overlay: https://github.com/ppkantorski/Ultrahand-Overlay
-- Alchemist: https://github.com/ppkantorski/Alchemist
+- [Atmosphere](https://github.com/Atmosphere-NX/Atmosphere)
+- [HATS](https://github.com/sthetix/HATS)
+- [Horizon OC](https://github.com/Horizon-OC/Horizon-OC)
+- [Hekate](https://github.com/CTCaer/hekate)
+- [NX-Carnage](https://github.com/dominatorul/Nx-Carnage)
+- [sys-patch](https://github.com/impeeza/sys-patch)
+- [Ultrahand Overlay](https://github.com/ppkantorski/Ultrahand-Overlay)
+- [Alchemist](https://github.com/ppkantorski/Alchemist)
