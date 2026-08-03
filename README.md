@@ -1,6 +1,6 @@
 # StarterNX
 
-StarterNX is a curated Nintendo Switch CFW SD-card pack for firmware up to 22.5.0. It uses the vanilla Atmosphere 1.11.2 core, selected HATS components, and Horizon OC as its only overclocking system. It is not Kefirosphere-based.
+StarterNX is a curated Nintendo Switch CFW SD-card pack for firmware up to 22.5.0. It uses the vanilla Atmosphere 1.11.2 core, selected HATS components, and Horizon OC as its only overclocking system.
 
 Most users should start with [NX-Carnage](https://github.com/dominatorul/Nx-Carnage) instead (if it's been updated, looking like it hasn't been touched in a while). StarterNX is a more opinionated variant with independent component refreshes and a recovery-focused boot layout.
 
